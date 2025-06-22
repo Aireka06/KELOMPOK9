@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🌶️ Greenhouse Cabai Dashboard</title>
+
+  <!-- Font & Style -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: white;
+    }
+    .container {
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 10px #00f3ff;
+    }
+    button {
+      background: #00f3ff;
+      color: #000;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1rem;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: transform 0.3s, background 0.3s;
+    }
+    button:hover {
+      background: #00c4d3;
+      transform: scale(1.05);
+    }
+    .info-section {
+      background: rgba(0, 243, 255, 0.1);
+      padding: 1rem 1.5rem;
+      border-left: 5px solid #00f3ff;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    .info-section h2 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: #ffffff;
+      text-shadow: 0 0 6px #00f3ff;
+    }
+    .info-section p {
+      line-height: 1.6;
+      font-size: 1rem;
+      color: #e0f7fa;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      background-color: rgba(255, 255, 255, 0.05);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    th, td {
+      padding: 12px;
+      text-align: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    th {
+      background-color: rgba(0, 243, 255, 0.2);
+      color: #00f3ff;
+    }
+    .chart-section {
+      margin-top: 40px;
+    }
+    canvas {
+      background: #ffffff08;
+      border-radius: 10px;
+      padding: 1rem;
+    }
+    small {
+      display: block;
+      margin-top: 4px;
+    }
+  </style>
+
+  <!-- Lib -->
+  <script src="https://cdn.jsdelivr.net/npm/ethers/dist/ethers.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1><img src="https://img.icons8.com/emoji/48/chili-pepper-emoji.png" alt="Chili" style="vertical-align: middle; margin-right: 10px;">Greenhouse Cabai Smart Monitor</h1>
+      <button onclick="loadSensorData()">🔄 Load Sensor Data</button>
+    </header>
+
+    <section class="info-section">
+      <h2>🔎 Informasi Biaya Listrik & Set Point Greenhouse</h2>
+      <p>
+        💡 Tarif dasar listrik: <strong>Rp 1.444,70 / kWh</strong><br/>
+        🌡️ Suhu ideal: <strong>20°C - 27°C</strong>. Di atas atau di bawah rentang ini, sistem pendingin atau pemanas akan aktif.<br/>
+        💧 Kelembapan ideal: <strong>50% - 85%</strong>. Di luar rentang ini, pompa humidifier atau dehumidifier aktif.
+      </p>
+    </section>
+
+    <section class="table-section">
+      <table id="sensorTable">
+        <thead>
+          <tr>
+            <th>Timestamp</th>
+            <th>Sensor ID</th>
+            <th>Location</th>
+            <th>Stage</th>
+            <th>Temperature (°C)</th>
+            <th>Humidity (%)</th>
+            <th>Energy (kWh)</th>
+            <th>Biaya (Rp)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Data will be loaded here -->
+        </tbody>
+      </table>
+    </section>
+
+    <section class="chart-section">
+      <canvas id="chart" height="100"></canvas>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
