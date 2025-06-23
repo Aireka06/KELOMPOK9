@@ -52,4 +52,55 @@ Dengan **IoT dan blockchain**, sistem ini:
 - Mendorong pertanian presisi di Indonesia
 
 ## ⚙️ Arsitektur Sistem
+Sensor (SHT20)
+│
+Modbus RTU
+│
+Mikrokontroler (Rust)
+│
+TCP/IP
+│
+TCP Server ─► InfluxDB ─► Grafana
+│
+└────► Smart Contract (Blockchain)
+
+### Lapisan Sistem
+
+- **Hardware Layer**: Sensor SHT20 (Modbus RTU)
+- **Middleware Layer**: Modbus Client & TCP Server (Rust)
+- **Backend & Frontend Layer**: InfluxDB, Grafana, Qt GUI, Blockchain
+
+### Integrasi Blockchain
+
+- Smart Contract dibangun dengan **Solidity**
+- Data dapat diakses melalui **Web3.js** / **Ethers.js**
+- DApp untuk menampilkan data & audit publik
+
+## 🗂️ Struktur Proyek
+
+greenhouse-monitoring/
+├── modbus_client/ # Client pembaca sensor (Rust)
+├── tcp_server/ # Server penerima data & penyimpan InfluxDB (Rust)
+├── qt_desktop_app/ # Aplikasi GUI lokal (Qt)
+├── smart_contract/ # Kontrak pintar Blockchain (Solidity)
+├── dapp/ # Aplikasi Web untuk verifikasi data (Web3.js)
+└── README.md # Dokumentasi proyek
+
+## 🔄 Alur Kerja Sistem
+
+1. Sensor SHT20 membaca suhu & kelembaban → dikirim via Modbus RTU
+2. Modbus Client → parsing data ke JSON → kirim ke TCP Server
+3. TCP Server → simpan ke InfluxDB
+4. Data divisualisasikan di Grafana
+5. Data juga dicatat ke Blockchain via Smart Contract
+6. DApp memungkinkan publik melakukan verifikasi data
+
+---
+
+## 👨‍💻 Anggota Tim
+**Kelompok 9 - Kelas 4A**
+- Muhammad Ali Makki (2042231023)
+- Aireka Maulana Erawan (2042231047)
+- Syahira Arliya Putri Subekti (2042231051)
+
 
