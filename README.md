@@ -128,20 +128,22 @@ sudo chmod a+rw /dev/ttyUSB0
 ```
 untuk mendapatkan permission untuk membaca data dari sensor
 
-![image](https://github.com/user-attachments/assets/05124d78-52aa-4365-b2fd-a28afc1d9c35)
+![Untitled](https://github.com/user-attachments/assets/a229951b-e94c-4188-97c6-d014928c7199)
 
 Maka setelah itu tampilan dari Terminal dari sensor akan berubah menjadi berikut:
 
-![image](https://github.com/user-attachments/assets/9f869be4-cba3-4ebb-8f3a-35911d182e3e)
+![Untitled-1](https://github.com/user-attachments/assets/ddd5cf90-0bf2-4dfc-9148-58a99f18b480)
 
 ### 3. Lalu buat tab baru untuk terminal,
 kemudian masukkan command ```ganache``` , kemudian akan muncul tampilan seperti gambar berikut:
 
-![image](https://github.com/user-attachments/assets/d581a9a3-fae3-463e-9ee6-c331ff982113)
+![Untitled](https://github.com/user-attachments/assets/9300d456-ee5d-402d-9b6a-41afd56467b8)
+
 
 setelah itu salin salah satu Private Keys yang diberikan dari tampilan tersebut
 
-![image](https://github.com/user-attachments/assets/3ec94ad9-442f-49e2-924b-0cbe87a82cb5)
+![Uploading Untitled-1.jpg…]()
+
 
 ### 4. Kemudian buka file main.rs yang terdapat di /Server/src. Kemudian ganti local wallet yang ada di bawah “let wallet: LocalWallet =” kemudian save progressnyaa.
 ![Untitled](https://github.com/user-attachments/assets/b212145f-03f1-4e57-b902-573a3b5c8dfe)
