@@ -112,7 +112,7 @@ kemudian masukkan command cd sensor kemudian enter, lalu masukkan command
 cargo run
 ```
 lalu enter, untuk membaca kemudian mengirimkan data dari bacaan sensor ke Rust TCP Server. Maka tampilannya akan seperti berikut:
-![WhatsApp Image 2025-06-19 at 01 49 57_04ee2861](https://github.com/user-attachments/assets/1a3b32ee-89fe-4a1e-be3f-ec3af137b3ac)
+![Untitled](https://github.com/user-attachments/assets/a229951b-e94c-4188-97c6-d014928c7199) 
 terlihat pada tampilan awal tertera “Gagal baca sensor: Permission denied.
 
 ### 2. Lalu buat tab baru untuk terminal, 
@@ -128,21 +128,23 @@ sudo chmod a+rw /dev/ttyUSB0
 ```
 untuk mendapatkan permission untuk membaca data dari sensor
 
-![Untitled](https://github.com/user-attachments/assets/a229951b-e94c-4188-97c6-d014928c7199)
+![Untitled-1](https://github.com/user-attachments/assets/ddd5cf90-0bf2-4dfc-9148-58a99f18b480)
 
 Maka setelah itu tampilan dari Terminal dari sensor akan berubah menjadi berikut:
+![Untitled](https://github.com/user-attachments/assets/9300d456-ee5d-402d-9b6a-41afd56467b8)
 
-![Untitled-1](https://github.com/user-attachments/assets/ddd5cf90-0bf2-4dfc-9148-58a99f18b480)
 
 ### 3. Lalu buat tab baru untuk terminal,
 kemudian masukkan command ```ganache``` , kemudian akan muncul tampilan seperti gambar berikut:
 
-![Untitled](https://github.com/user-attachments/assets/9300d456-ee5d-402d-9b6a-41afd56467b8)
+![Untitled](https://github.com/user-attachments/assets/6a2d25be-3a22-45fc-a6fa-3cc60cd7eac1)
+
 
 
 setelah itu salin salah satu Private Keys yang diberikan dari tampilan tersebut
 
-![Uploading Untitled-1.jpg…]()
+![Untitled-1](https://github.com/user-attachments/assets/e10e4641-62aa-4854-9782-ab6fd1c1eec7)
+
 
 
 ### 4. Kemudian buka file main.rs yang terdapat di /Server/src. Kemudian ganti local wallet yang ada di bawah “let wallet: LocalWallet =” kemudian save progressnyaa.
